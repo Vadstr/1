@@ -1,8 +1,10 @@
 package com.company;
+import java.util.Scanner;
 
 public class Lab3 {
     public static void main(String[] arg) {
-        String text = "Паралелепипед мама тато математика тригонометрия татар";
+        Scanner scanner = new Scanner(System.in);
+        String text = scanner.nextLine();
         String[] words = text.split(" ");
         for (String word : words) {
             int l = word.length();
