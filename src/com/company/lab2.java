@@ -1,9 +1,9 @@
 package com.company;
-
+import java.util.*;
 public class lab2 {
     public static void main(String[] arg) {
-        double n=3,m=3;
-        double [][]A = new double[][]{
+        int n=3,m=3;
+        int [][]A = new int[][]{
                 {4,1,-6},
                 {3,6,1},
                 {2,1,3}
@@ -12,10 +12,12 @@ public class lab2 {
 
             }
 
-            private static void Func(double[][] A, double n, double m) {
+            private static void Func(int[][] A, int n, int m) {
+        Scanner scanner = new Scanner(System.in);
+        int B = scanner.nextInt();
                 for (int i = 0; i <n; i++){
                     for (int j=0;j<m;j++){
-                        double L =3*A[i][j];
+                        int L = B*A[i][j];
                         System.out.print(L +" ");
 
                     }

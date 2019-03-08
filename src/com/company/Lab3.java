@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Lab3 {
     public static void main(String[] arg) {
+        System.out.println("Введите текст на редактирование");
         Scanner scanner = new Scanner(System.in);
         String text = scanner.nextLine();
         String[] words = text.split(" ");
