@@ -1,4 +1,4 @@
-package com.company.lab4;
+package lab4;
 
 public class Mebel {
     public String material = "дерево";
