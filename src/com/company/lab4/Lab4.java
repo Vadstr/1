@@ -1,38 +1,65 @@
 package com.company.lab4;
-import java.util.*;
 
 public class Lab4 {
     public static void main(String[] arg){
-        Scanner scanner = new Scanner(System.in);
-        Mebel Stol = new Mebel();
-        Mebel Kreslo = new Mebel();
-        Mebel Divan = new Mebel();
-        Mebel Komod = new Mebel();
-        Mebel Shkaf = new Mebel();
-        Stol.width = scanner.nextDouble();
-        Stol.depth = scanner.nextDouble();
-        Stol.height = scanner.nextDouble();
-        Stol.room = "кабинет";
-        Kreslo.width = scanner.nextDouble();
-        Kreslo.height = scanner.nextDouble();
-        Kreslo.room = "кабинет";
-        Kreslo.material = "Пластик и кожзам";
-        Komod.width = scanner.nextDouble();
-        Komod.depth = scanner.nextDouble();
-        Komod.room = "спальня";
-        Divan.width = scanner.nextDouble();
-        Divan.depth = scanner.nextDouble();
-        Divan.room = "гостинная";
-        Shkaf.width = scanner.nextDouble();
-        Shkaf.height = scanner.nextDouble();
-        Shkaf.room = "спальня";
-        double[] widt = {Stol.width,Kreslo.width,Komod.width,Divan.width,Shkaf.width};
-        System.out.println(widt);
-        for (int j = 0; j < 5; j++) {
-            double A = widt[j];
-            System.out.print(A+",");
+        Mebel Shkaf = new Mebel(2.4, 6, 0.8, "Дерево", "Шкаф");
+        Mebel Stol = new Mebel(1, 2.2, 0.7, "Дерево", "Стол");
+        Mebel Stul = new Mebel(1.8, 0.7, 0.6, "Дерево", "Стул");
+        Mebel Kamod = new Mebel(1.2, 1.2, 0.7, "Дерево", "Камод");
+        Mebel Divan = new Mebel(1.1, 3, 1.5, "Дерево", "Диван");
+        Object[][] Height = new Object[][]{{Shkaf.height,Stol.height,Stul.height,Kamod.height,Divan.height},{Shkaf.name,Stol.name,Stul.name,Kamod.name,Divan.name}};
+        Object[][] Weight = new Object[][]{{Shkaf.width,Stol.width,Stul.width,Kamod.width,Divan.width},{Shkaf.name,Stol.name,Stul.name,Kamod.name,Divan.name}};
+        for (int i = 0; i < Height[0].length; i++) {
+            Object min = Height[0][i];
+            int min_i = i;
+            for (int j = i+1; j < Height[0].length; j++) {
+                if ((double)Height[0][j] < (double)min) {
+                    min = Height[0][j];
+                    min_i = j;
 
+                }
+            }
+            if (i != min_i) {
+                Object tmp = Height[0][i];
+                Object tmpp = Height[1][i];
+                Height[0][i] = Height[0][min_i];
+                Height[1][i] = Height[1][min_i];
+                Height[0][min_i] = tmp;
+                Height[1][min_i] = tmpp;
+            }
         }
 
+
+        for (int i = 0; i < Weight[0].length; i++) {
+            Object min = Weight[0][i];
+            int min_i = i;
+            for (int j = i+1; j < Weight[0].length; j++) {
+                if ((double)Weight[0][j] < (double)min) {
+                    min = Weight[0][j];
+                    min_i = j;
+
+                }
+            }
+            if (i != min_i) {
+                Object tmp = Weight[0][i];
+                Object tmpp = Weight[1][i];
+                Weight[0][i] = Weight[0][min_i];
+                Weight[1][i] = Weight[1][min_i];
+                Weight[0][min_i] = tmp;
+                Weight[1][min_i] = tmpp;
+            }
+        }
+        System.out.println("Сортировка за высотой:");
+        for (int f=Height[0].length-1;f>=0;f--){
+            System.out.println(Height[1][f]+" = "+Height[0][f]);
+        }
+        System.out.println();
+        System.out.println("Сортировка за шириной:");
+        for (int f=Weight[0].length-1;f>=0;f--){
+            System.out.println(Weight[1][f]+" = "+Weight[0][f]);
+        }
     }
 }
+
+
+
