@@ -1,13 +1,51 @@
 package lab4;
-
 public class Lab4 {
-    public static void main(String[] arg){
-        Mebel Shkaf = new Mebel(2.4, 6, 0.8, "Дерево", "Шкаф");
+    public static void main(String[] arg) {
+        int a = 5;
+        Mebel[] arr = new Mebel[a];
+        arr[0] = new Mebel(2.4, 6, 0.8, "Дерево", "Шкаф");
+        arr[1] = new Mebel(1, 2.2, 0.7, "Дерево", "Стол");
+        arr[2] = new Mebel(1.8, 0.7, 0.6, "Дерево", "Стул");
+        arr[3] = new Mebel(1.2, 1.2, 0.7, "Дерево", "Камод");
+        arr[4] = new Mebel(1.1, 3, 1.5, "Дерево", "Диван");
+        Mebel[] arrr = new Mebel[1];
+        arrr[0] = new Mebel(0,0,0,"0","0");
+        System.out.println("┌------------------------------до сортировки----------------------------┐");
+        for (Mebel u : arr) { System.out.println(u); }
+        System.out.println("└-----------------------------------------------------------------------┘");
+        for (int i = 0;i<a ;i++){
+            for (int j = i+1;j<a ;j++){
+                if(arr[i].height>arr[j].height){
+                    arrr[0]=arr[j];
+                    arr[j]=arr[i];
+                    arr[i]=arrr[0];
+                }
+            }
+        }
+        System.out.println("┌----------------------после сортировки по высоте-----------------------┐");
+        for (Mebel u : arr) { System.out.println(u); }
+        System.out.println("└-----------------------------------------------------------------------┘");
+        for (int i = 0;i<a ;i++){
+            for (int j = i+1;j<a ;j++){
+                if(arr[i].width>arr[j].width){
+                    arrr[0]=arr[j];
+                    arr[j]=arr[i];
+                    arr[i]=arrr[0];
+                }
+            }
+        }
+        System.out.println("┌----------------------после сортировки по ширине-----------------------┐");
+        for (Mebel u : arr) { System.out.println(u); }
+        System.out.println("└-----------------------------------------------------------------------┘");
+    }
+
+
+       /* Mebel Shkaf = new Mebel(2.4, 6, 0.8, "Дерево", "Шкаф");
         Mebel Stol = new Mebel(1, 2.2, 0.7, "Дерево", "Стол");
         Mebel Stul = new Mebel(1.8, 0.7, 0.6, "Дерево", "Стул");
         Mebel Kamod = new Mebel(1.2, 1.2, 0.7, "Дерево", "Камод");
         Mebel Divan = new Mebel(1.1, 3, 1.5, "Дерево", "Диван");
-        Object[][] Height = new Object[][]{{Shkaf.height,Stol.height,Stul.height,Kamod.height,Divan.height},{Shkaf.name,Stol.name,Stul.name,Kamod.name,Divan.name}};
+       Object[][] Height = new Object[][]{{Shkaf.height,Stol.height,Stul.height,Kamod.height,Divan.height},{Shkaf.name,Stol.name,Stul.name,Kamod.name,Divan.name}};
         Object[][] Weight = new Object[][]{{Shkaf.width,Stol.width,Stul.width,Kamod.width,Divan.width},{Shkaf.name,Stol.name,Stul.name,Kamod.name,Divan.name}};
         for (int i = 0; i < Height[0].length; i++) {
             Object min = Height[0][i];
@@ -58,7 +96,7 @@ public class Lab4 {
         for (int f=Weight[0].length-1;f>=0;f--){
             System.out.println(Weight[1][f]+" = "+Weight[0][f]);
         }
-    }
+    }*/
 }
 
 
