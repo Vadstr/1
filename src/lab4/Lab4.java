@@ -1,4 +1,8 @@
 package lab4;
+
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class Lab4 {
     public static void main(String[] arg) {
         int a = 5;
@@ -8,36 +12,55 @@ public class Lab4 {
         arr[2] = new Mebel(1.8, 0.7, 0.6, "Дерево", "Стул");
         arr[3] = new Mebel(1.2, 1.2, 0.7, "Дерево", "Камод");
         arr[4] = new Mebel(1.1, 3, 1.5, "Дерево", "Диван");
-        Mebel[] arrr = new Mebel[1];
-        arrr[0] = new Mebel(0,0,0,"0","0");
         System.out.println("┌------------------------------до сортировки----------------------------┐");
         for (Mebel u : arr) { System.out.println(u); }
         System.out.println("└-----------------------------------------------------------------------┘");
-        for (int i = 0;i<a ;i++){
-            for (int j = i+1;j<a ;j++){
-                if(arr[i].height>arr[j].height){
-                    arrr[0]=arr[j];
-                    arr[j]=arr[i];
-                    arr[i]=arrr[0];
-                }
-            }
-        }
+
+        Arrays.sort(arr, Comparator.comparing(Mebel ::getHeight));
         System.out.println("┌----------------------после сортировки по высоте-----------------------┐");
         for (Mebel u : arr) { System.out.println(u); }
         System.out.println("└-----------------------------------------------------------------------┘");
-        for (int i = 0;i<a ;i++){
-            for (int j = i+1;j<a ;j++){
-                if(arr[i].width>arr[j].width){
-                    arrr[0]=arr[j];
-                    arr[j]=arr[i];
-                    arr[i]=arrr[0];
-                }
-            }
-        }
+
+        Arrays.sort(arr, Comparator.comparing(Mebel ::getWidth));
         System.out.println("┌----------------------после сортировки по ширине-----------------------┐");
         for (Mebel u : arr) { System.out.println(u); }
         System.out.println("└-----------------------------------------------------------------------┘");
     }
+//        int a = 5;
+//        Mebel[] arr = new Mebel[a];
+//        arr[0] = new Mebel(2.4, 6, 0.8, "Дерево", "Шкаф");
+//        arr[1] = new Mebel(1, 2.2, 0.7, "Дерево", "Стол");
+//        arr[2] = new Mebel(1.8, 0.7, 0.6, "Дерево", "Стул");
+//        arr[3] = new Mebel(1.2, 1.2, 0.7, "Дерево", "Камод");
+//        arr[4] = new Mebel(1.1, 3, 1.5, "Дерево", "Диван");
+//        System.out.println("┌------------------------------до сортировки----------------------------┐");
+//        for (Mebel u : arr) { System.out.println(u); }
+//        System.out.println("└-----------------------------------------------------------------------┘");
+//        for (int i = 0;i<a ;i++){
+//            for (int j = i+1;j<a ;j++){
+//                if(arr[i].height>arr[j].height){
+//                    Mebel m=arr[j];
+//                    arr[j]=arr[i];
+//                    arr[i]=m;
+//                }
+//            }
+//        }
+//        System.out.println("┌----------------------после сортировки по высоте-----------------------┐");
+//        for (Mebel u : arr) { System.out.println(u); }
+//        System.out.println("└-----------------------------------------------------------------------┘");
+//        for (int i = 0;i<a ;i++){
+//            for (int j = i+1;j<a ;j++){
+//                if(arr[i].width>arr[j].width){
+//                    Mebel m=arr[j];
+//                    arr[j]=arr[i];
+//                    arr[i]=m;
+//                }
+//            }
+//        }
+//        System.out.println("┌----------------------после сортировки по ширине-----------------------┐");
+//        for (Mebel u : arr) { System.out.println(u); }
+//        System.out.println("└-----------------------------------------------------------------------┘");
+//    }
 
 
        /* Mebel Shkaf = new Mebel(2.4, 6, 0.8, "Дерево", "Шкаф");
@@ -98,6 +121,10 @@ public class Lab4 {
         }
     }*/
 }
+
+
+
+
 
 
 

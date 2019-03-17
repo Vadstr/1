@@ -6,7 +6,7 @@ public class Lab3 {
         System.out.println("Введите текст на редактирование");
         Scanner scanner = new Scanner(System.in);
         String text = scanner.nextLine();
-        String[] words = text.split(" ");
+        String[] words = text.split("[\\s]+");
         for (String word : words) {
             int l = word.length();
             char d = word.charAt(0);
@@ -15,7 +15,8 @@ public class Lab3 {
                 d = Character.toLowerCase(d);
             for (int i = 1; i < l; i++) {
                 char c = word.charAt(i);
-                if (c != d) {
+                char c1 = Character.toLowerCase(c);
+                if (c1 != d) {
                     System.out.print(c);
                 }else{System.out.print("");}
             }
